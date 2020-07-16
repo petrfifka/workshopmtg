@@ -1,0 +1,29 @@
+//Find object in array and return it
+function getObjectFromArray(jsonArray, keyname, value) {
+    var jsonObject = null; //FIXME replace with empty jsonArray
+        _.each(jsonArray, (arrayItem) => {
+           if(_.get(arrayItem, keyname) === value) {
+               jsonObject = arrayItem;
+           }
+    });
+    return jsonObject;
+}
+
+function isObjectInArray(jsonArray, keyname, value) {
+    return getObjectFromArray(jsonArray, keyname, value) !== null;
+}
+
+function objectToBeInArray(jsonArray, keyname, value) {
+    pm.expect(isObjectInArray(jsonArray, keyname, value)).to.be.true;
+}
+
+//Find value in non object array
+function getValueFromArray(jsonArray, value) {
+    var arrayValue = null; //FIXME replace with empty jsonArray
+        _.each(jsonArray, (arrayItem) => {
+           if(_.get(keyname) === value) { //TODO check if work
+               arrayValue = arrayItem;
+           }
+    });
+    return arrayValue;
+}
